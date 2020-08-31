@@ -1,21 +1,3 @@
-/*!
-
-=========================================================
-* Paper Dashboard React - v1.2.0
-=========================================================
-
-* Product Page: https://www.creative-tim.com/product/paper-dashboard-react
-* Copyright 2020 Creative Tim (https://www.creative-tim.com)
-
-* Licensed under MIT (https://github.com/creativetimofficial/paper-dashboard-react/blob/master/LICENSE.md)
-
-* Coded by Creative Tim
-
-=========================================================
-
-* The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
-
-*/
 import Dashboard from "views/Dashboard.js";
 import Notifications from "views/Notifications.js";
 import Icons from "views/Icons.js";
@@ -23,8 +5,10 @@ import Typography from "views/Typography.js";
 import TableList from "views/Tables.js";
 import Maps from "views/Map.js";
 import UserManagemet from "views/UserManagement";
+
 import UserPage from "views/User.js";
 import UpgradeToPro from "views/Upgrade.js";
+import MealsManagement from "views/MealsManagement";
 
 var routes = [
   {
@@ -38,7 +22,7 @@ var routes = [
     path: "/statistics",
     name: "Statistics",
     icon: "nc-icon nc-chart-pie-36",
-    component: Icons,
+    component: Dashboard,
     layout: "/admin",
   },
   {
@@ -49,10 +33,10 @@ var routes = [
     layout: "/admin",
   },
   {
-    path: "/Meals-Management",
+    path: "/MealsManagement",
     name: "Meals Management",
     icon: "nc-icon nc-basket",
-    component: TableList,
+    component: MealsManagement,
     layout: "/admin",
   },
   {
@@ -76,8 +60,6 @@ var routes = [
     component: Dashboard,
     layout: "/admin",
   },
-
-
   {
     path: "/maps",
     name: "Maps",

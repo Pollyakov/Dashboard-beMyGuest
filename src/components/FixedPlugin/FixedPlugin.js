@@ -1,23 +1,5 @@
-/*!
 
-=========================================================
-* Paper Dashboard React - v1.2.0
-=========================================================
-
-* Product Page: https://www.creative-tim.com/product/paper-dashboard-react
-* Copyright 2020 Creative Tim (https://www.creative-tim.com)
-
-* Licensed under MIT (https://github.com/creativetimofficial/paper-dashboard-react/blob/master/LICENSE.md)
-
-* Coded by Creative Tim
-
-=========================================================
-
-* The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
-
-*/
 import React, { Component } from "react";
-
 import { Button } from "reactstrap";
 
 class FixedPlugin extends Component {
@@ -28,6 +10,7 @@ class FixedPlugin extends Component {
     };
     this.handleClick = this.handleClick.bind(this);
   }
+  //נפתח ונסגר בקליק
   handleClick() {
     if (this.state.classes === "dropdown") {
       this.setState({ classes: "dropdown show" });
@@ -42,6 +25,7 @@ class FixedPlugin extends Component {
           <div onClick={this.handleClick}>
             <i className="fa fa-cog fa-2x" />
           </div>
+          
           <ul className="dropdown-menu show">
             <li className="header-title">SIDEBAR BACKGROUND</li>
             <li className="adjustments-line">
