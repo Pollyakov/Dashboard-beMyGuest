@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import { Container, Table, Col, Button } from "react-bootstrap";
 import BootstrapTable from 'react-bootstrap-table-next';
 import axios from "axios";
+import './UserManagement.css';
 import 'react-bootstrap-table-next/dist/react-bootstrap-table2.min.css';
 // reactstrap components
 import {
@@ -68,32 +69,49 @@ class UserManagement extends React.Component {
                   <CardTitle tag="h4">User Management</CardTitle>
                 </CardHeader> */}
                 <CardBody>
+
+                <div className="button-container">
+              <Button
+                href="#"
+                color="primary"
+                block
+                className="btn-round"
+              >
+                Delete
+              </Button>
+              <Button
+                href="#"
+                color="primary"
+                block
+                className="btn-round"
+              >
+                Rename
+              </Button>
+              <Button
+                href="#"
+                color="primary"
+                block
+                className="btn-round"
+              >
+                Reset Password
+              </Button>
+              <Button
+                href="#"
+                color="primary"
+                block
+                className="btn-round"
+              >
+                Send Mail
+              </Button>
+              </div>
+              
                 <BootstrapTable
                  keyField="id"
                  data={this.state.users}
                  columns={columns}
                 selectRow={selectRow}
                  />
-                  {/* <Table responsive>
-                    <thead className="text-primary">
-                      <tr>
-                        <th>User Id</th>
-                        <th>User Name</th>
-                        <th>Creation Date</th>
-                        <th className="text-right">Password</th>
-                        <th>Location</th>
-                      </tr>
-                    </thead> */}
-                    
-                    {/* <tbody>
-                      <tr>
-                        <td>Dakota Rice</td>
-                        <td>Niger</td>
-                        <td>Oud-Turnhout</td>
-                        <td className="text-right">$36,738</td>
-                      </tr>
-                    </tbody> */}
-                  {/* </Table> */}
+                
                 </CardBody>
               </Card>
             </Col>
