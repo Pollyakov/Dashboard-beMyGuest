@@ -89,20 +89,20 @@ class MealsManagement extends React.Component {
       <>
         <div className="content">
           <Row>
-            <Col md="12">
+            {/* <Col md="12">
               <Card>
                 
                 <CardBody>
                 <div className="button-container">
-              <Button
+                <Button
                 href="#"
                 color="primary"
                 block
                 className="btn-round"
-              >
+                >
                 Delete
-              </Button>
-              <Button
+                </Button>
+                <Button
                 href="#"
                 color="primary"
                 block
@@ -111,6 +111,7 @@ class MealsManagement extends React.Component {
                 Rename
               </Button>
               </div>
+
                 <BootstrapTable
                  keyField="id"
                  data={this.state.meals}
@@ -119,7 +120,7 @@ class MealsManagement extends React.Component {
                  />
                 </CardBody>
               </Card>
-            </Col>
+            </Col> */}
 
 
 
@@ -127,23 +128,20 @@ class MealsManagement extends React.Component {
             <Col md="12">
               <Card className="card-plain">
                 <CardHeader>
-                  <CardTitle tag="h4">Table on Plain Background</CardTitle>
+                  <CardTitle tag="h4">Meals MealsManagement</CardTitle>
                   <p className="card-category">
-                    Here is a subtitle for this table
+                    Tablica pro aruhot
                   </p>
                 </CardHeader>
                 <CardBody>
                   <Table responsive>
-                    <thead className="text-primary">
-                      <tr>
-                        <th>Name</th>
-                        <th>Country</th>
-                        <th>City</th>
-                        <th className="text-right">Salary</th>
-                      </tr>
-                    </thead>
-                    <tbody>
-                    </tbody>
+                  <BootstrapTable
+                 keyField="id"
+                 data={this.state.meals}
+                 columns={columns}
+                selectRow={selectRow}
+                 />
+                   
                   </Table>
                 </CardBody>
               </Card>

@@ -74,8 +74,8 @@ class UserManagement extends React.Component {
               <Button
                 href="#"
                 color="primary"
-                block
-                className="btn-round"
+               
+                className="btn btn-outline-default btn-block"
               >
                 Delete
               </Button>
@@ -83,7 +83,16 @@ class UserManagement extends React.Component {
                 href="#"
                 color="primary"
                 block
-                className="btn-round"
+                className="btn btn-outline-default btn-block"
+              > 
+            
+                Reset Password
+              </Button>
+              <Button
+                href="#"
+                color="primary"
+                block
+                className="btn btn-outline-default btn-block"
               >
                 Rename
               </Button>
@@ -91,17 +100,10 @@ class UserManagement extends React.Component {
                 href="#"
                 color="primary"
                 block
-                className="btn-round"
-              >
-                Reset Password
-              </Button>
-              <Button
-                href="#"
-                color="primary"
-                block
-                className="btn-round"
+                className="btn btn-outline-default btn-block"
               >
                 Send Mail
+                <i className="nc-email-85" />
               </Button>
               </div>
               
@@ -115,30 +117,7 @@ class UserManagement extends React.Component {
                 </CardBody>
               </Card>
             </Col>
-            <Col md="12">
-              <Card className="card-plain">
-                <CardHeader>
-                  <CardTitle tag="h4">Table on Plain Background</CardTitle>
-                  <p className="card-category">
-                    Here is a subtitle for this table
-                  </p>
-                </CardHeader>
-                <CardBody>
-                  <Table responsive>
-                    <thead className="text-primary">
-                      <tr>
-                        <th>Name</th>
-                        <th>Country</th>
-                        <th>City</th>
-                        <th className="text-right">Salary</th>
-                      </tr>
-                    </thead>
-                    <tbody>
-                    </tbody>
-                  </Table>
-                </CardBody>
-              </Card>
-            </Col>
+            
           </Row>
         </div>
       </>
