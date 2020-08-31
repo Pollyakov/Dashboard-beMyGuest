@@ -1,19 +1,63 @@
-
-import React from "react";
-
+import React, { Component } from "react";
+import { Container, Table, Col, Button } from "react-bootstrap";
+import BootstrapTable from 'react-bootstrap-table-next';
+import axios from "axios";
+import 'react-bootstrap-table-next/dist/react-bootstrap-table2.min.css';
 // reactstrap components
 import {
   Card,
   CardHeader,
   CardBody,
   CardTitle,
-  Table,
+//   Table,
   Row,
-  Col,
+//   Col,
 } from "reactstrap";
 
 class UserManagement extends React.Component {
+    constructor(props) {
+        super(props);
+        this.state = {
+          users: [],
+        };
+      }
+      componentDidMount() {
+        axios
+          .get("https://tabsur.herokuapp.com/api/system/users")
+          .then((response) => {
+            this.setState({
+              users: response.data,
+            });
+          });
+      }
+
   render() {
+    const columns = [
+        {
+          dataField: "id",
+          text: "user ID",
+          sort: true,
+        },
+        {
+          dataField: "name",
+          text: "User Name",
+          sort: true,
+        },
+        {
+          dataField: "created_at",
+          text: "Creation Date",
+          sort: true,
+        },
+        {
+          dataField: "email",
+          text: "User email",
+          sort: true,
+        },
+      ];
+      const selectRow = {
+        mode: "checkbox",
+        clickToSelect: true,
+      };
     return (
       <>
         <div className="content">
@@ -24,7 +68,13 @@ class UserManagement extends React.Component {
                   <CardTitle tag="h4">User Management</CardTitle>
                 </CardHeader> */}
                 <CardBody>
-                  <Table responsive>
+                <BootstrapTable
+                 keyField="id"
+                 data={this.state.users}
+                 columns={columns}
+                selectRow={selectRow}
+                 />
+                  {/* <Table responsive>
                     <thead className="text-primary">
                       <tr>
                         <th>User Id</th>
@@ -33,25 +83,17 @@ class UserManagement extends React.Component {
                         <th className="text-right">Password</th>
                         <th>Location</th>
                       </tr>
-                    </thead>
+                    </thead> */}
                     
-                    <tbody>
+                    {/* <tbody>
                       <tr>
                         <td>Dakota Rice</td>
                         <td>Niger</td>
                         <td>Oud-Turnhout</td>
                         <td className="text-right">$36,738</td>
                       </tr>
-                      <tr>
-                        <td>Minerva Hooper</td>
-                        <td>Curaçao</td>
-                        <td>Sinaai-Waas</td>
-                        <td className="text-right">$23,789</td>
-                      </tr>
-                
-                  
-                    </tbody>
-                  </Table>
+                    </tbody> */}
+                  {/* </Table> */}
                 </CardBody>
               </Card>
             </Col>
@@ -74,48 +116,6 @@ class UserManagement extends React.Component {
                       </tr>
                     </thead>
                     <tbody>
-                      <tr>
-                        <td>Dakota Rice</td>
-                        <td>Niger</td>
-                        <td>Oud-Turnhout</td>
-                        <td className="text-right">$36,738</td>
-                      </tr>
-                      <tr>
-                        <td>Minerva Hooper</td>
-                        <td>Curaçao</td>
-                        <td>Sinaai-Waas</td>
-                        <td className="text-right">$23,789</td>
-                      </tr>
-                      <tr>
-                        <td>Sage Rodriguez</td>
-                        <td>Netherlands</td>
-                        <td>Baileux</td>
-                        <td className="text-right">$56,142</td>
-                      </tr>
-                      <tr>
-                        <td>Philip Chaney</td>
-                        <td>Korea, South</td>
-                        <td>Overland Park</td>
-                        <td className="text-right">$38,735</td>
-                      </tr>
-                      <tr>
-                        <td>Doris Greene</td>
-                        <td>Malawi</td>
-                        <td>Feldkirchen in Kärnten</td>
-                        <td className="text-right">$63,542</td>
-                      </tr>
-                      <tr>
-                        <td>Mason Porter</td>
-                        <td>Chile</td>
-                        <td>Gloucester</td>
-                        <td className="text-right">$78,615</td>
-                      </tr>
-                      <tr>
-                        <td>Jon Porter</td>
-                        <td>Portugal</td>
-                        <td>Gloucester</td>
-                        <td className="text-right">$98,615</td>
-                      </tr>
                     </tbody>
                   </Table>
                 </CardBody>
