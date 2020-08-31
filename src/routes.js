@@ -22,6 +22,7 @@ import Icons from "views/Icons.js";
 import Typography from "views/Typography.js";
 import TableList from "views/Tables.js";
 import Maps from "views/Map.js";
+import UserManagemet from "views/UserManagement";
 import UserPage from "views/User.js";
 import UpgradeToPro from "views/Upgrade.js";
 
@@ -44,20 +45,20 @@ var routes = [
     path: "/user-Management",
     name: "User Management",
     icon: "nc-icon nc-single-02",
-    component: UserPage,
+    component: UserManagemet,
     layout: "/admin",
   },
   {
     path: "/Meals-Management",
     name: "Meals Management",
-    icon: "nc-icon nc-tile-56",
+    icon: "nc-icon nc-basket",
     component: TableList,
     layout: "/admin",
   },
   {
     path: "/Log-Panel",
     name: "Logs",
-    icon: "nc-icon nc-tile-56",
+    icon: "nc-icon nc-paper",
     component: TableList,
     layout: "/admin",
   },
@@ -71,7 +72,7 @@ var routes = [
   {
     path: "/server-info",
     name: "Server Info",
-    icon: "nc-icon nc-bank",
+    icon: "nc-icon nc-alert-circle-i",
     component: Dashboard,
     layout: "/admin",
   },
@@ -80,7 +81,7 @@ var routes = [
   {
     path: "/maps",
     name: "Maps",
-    icon: "nc-icon nc-pin-3",
+    icon: "nc-icon",
     component: Maps,
     layout: "/admin",
   },
