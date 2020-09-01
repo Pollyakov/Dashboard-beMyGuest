@@ -30,12 +30,11 @@ class Dashboard extends React.Component {
               <Card className="card-stats">
                 <CardBody>
                   <Row>
+                  
                       <Col md="4" xs="5">
-                      <div className="icon-big text-center icon-warning">
+                      {/* <div className="icon-big text-center icon-warning"> */}
                       <ToggleSwitch/>
-                       
-                       
-                      </div>
+                      
                     </Col>
                     <Col md="8" xs="7">
                       <div className="numbers">
@@ -44,11 +43,6 @@ class Dashboard extends React.Component {
                         <p />
                       </div>
                     </Col>
-
-
-             
-
-                
                   </Row>
                 </CardBody>
                 <CardFooter>
@@ -59,19 +53,20 @@ class Dashboard extends React.Component {
                 </CardFooter>
               </Card>
             </Col>
+
             <Col lg="3" md="6" sm="6">
               <Card className="card-stats">
                 <CardBody>
                   <Row>
-                    <Col md="4" xs="5">
-                      <div className="icon-big text-center icon-warning">
-                        <i className="nc-icon nc-money-coins text-success" />
+                      <Col md="4" xs="5">
+                      <div className="icon text-center icon-warning">
+                      <ToggleSwitch/>
                       </div>
                     </Col>
                     <Col md="8" xs="7">
                       <div className="numbers">
-                        <p className="card-category">Revenue</p>
-                        <CardTitle tag="p">$ 1,345</CardTitle>
+                        <p className="card-category">Server status</p>
+                        <CardTitle tag="p">ON</CardTitle>
                         <p />
                       </div>
                     </Col>
@@ -80,7 +75,35 @@ class Dashboard extends React.Component {
                 <CardFooter>
                   <hr />
                   <div className="stats">
-                    <i className="far fa-calendar" /> Last day
+                    <i className="fas fa-sync-alt" /> Update Now
+                  </div>
+                </CardFooter>
+              </Card>
+            </Col>
+
+
+            <Col lg="3" md="6" sm="6">
+              <Card className="card-stats">
+                <CardBody>
+                  <Row>
+                    <Col md="4" xs="5">
+                      <div className="icon-big text-center icon-warning">
+                        <i className="nc-icon nc-circle-10 text-success" />
+                      </div>
+                    </Col>
+                    <Col md="8" xs="7">
+                      <div className="numbers">
+                        <p className="card-category">Users Registered</p>
+                        <CardTitle tag="p">1,345</CardTitle>
+                        <p />
+                      </div>
+                    </Col>
+                  </Row>
+                </CardBody>
+                <CardFooter>
+                  <hr />
+                  <div className="stats">
+                    <i className="far fa-calendar" /> Last 3 month
                   </div>
                 </CardFooter>
               </Card>
@@ -96,7 +119,7 @@ class Dashboard extends React.Component {
                     </Col>
                     <Col md="8" xs="7">
                       <div className="numbers">
-                        <p className="card-category">Errors</p>
+                        <p className="card-category">Users Online</p>
                         <CardTitle tag="p">23</CardTitle>
                         <p />
                       </div>
@@ -111,18 +134,19 @@ class Dashboard extends React.Component {
                 </CardFooter>
               </Card>
             </Col>
+
             <Col lg="3" md="6" sm="6">
               <Card className="card-stats">
                 <CardBody>
                   <Row>
                     <Col md="4" xs="5">
                       <div className="icon-big text-center icon-warning">
-                        <i className="nc-icon nc-favourite-28 text-primary" />
+                        <img className="nc-icon" src="my_meal.svg" />
                       </div>
                     </Col>
                     <Col md="8" xs="7">
                       <div className="numbers">
-                        <p className="card-category">Followers</p>
+                        <p className="card-category">Active Meals</p>
                         <CardTitle tag="p">+45K</CardTitle>
                         <p />
                       </div>
