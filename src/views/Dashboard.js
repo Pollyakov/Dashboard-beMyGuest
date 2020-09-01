@@ -19,27 +19,26 @@ import {
 } from "variables/charts.js";
 import Toggle from "components/Toggle";
 import ToggleSwitch from "components/ToggleSwitch/ToggleSwitch";
+import './dashboard.css';
 
 class Dashboard extends React.Component {
   render() {
     return (
       <>
         <div className="content">
-          <Row>
-            <Col lg="3" md="6" sm="6">
+          <Row className="firstrow">
+            <Col  lg="2" md="6" sm="6">
               <Card className="card-stats">
-                <CardBody>
+                <CardBody> 
                   <Row>
-                  
                       <Col md="4" xs="5">
                       {/* <div className="icon-big text-center icon-warning"> */}
                       <ToggleSwitch/>
-                      
                     </Col>
                     <Col md="8" xs="7">
                       <div className="numbers">
-                        <p className="card-category">Data Base status</p>
-                        <CardTitle tag="p">ON</CardTitle>
+                        <p className="card-category">Data Base</p>
+                        <CardTitle tag="p">OFF</CardTitle>
                         <p />
                       </div>
                     </Col>
@@ -54,7 +53,7 @@ class Dashboard extends React.Component {
               </Card>
             </Col>
 
-            <Col lg="3" md="6" sm="6">
+            <Col lg="2" md="6" sm="6">
               <Card className="card-stats">
                 <CardBody>
                   <Row>
@@ -65,7 +64,7 @@ class Dashboard extends React.Component {
                     </Col>
                     <Col md="8" xs="7">
                       <div className="numbers">
-                        <p className="card-category">Server status</p>
+                        <p className="card-category">Server</p>
                         <CardTitle tag="p">ON</CardTitle>
                         <p />
                       </div>
@@ -82,13 +81,13 @@ class Dashboard extends React.Component {
             </Col>
 
 
-            <Col lg="3" md="6" sm="6">
+            <Col lg="2" md="6" sm="6">
               <Card className="card-stats">
                 <CardBody>
                   <Row>
                     <Col md="4" xs="5">
                       <div className="icon-big text-center icon-warning">
-                        <i className="nc-icon nc-circle-10 text-success" />
+                        <i className="nc-icon nc-badge text-success" />
                       </div>
                     </Col>
                     <Col md="8" xs="7">
@@ -108,13 +107,14 @@ class Dashboard extends React.Component {
                 </CardFooter>
               </Card>
             </Col>
-            <Col lg="3" md="6" sm="6">
+            
+            <Col lg="2" md="6" sm="6">
               <Card className="card-stats">
                 <CardBody>
                   <Row>
                     <Col md="4" xs="5">
                       <div className="icon-big text-center icon-warning">
-                        <i className="nc-icon nc-vector text-danger" />
+                        <i className="nc-icon nc-circle-10 text-danger" />
                       </div>
                     </Col>
                     <Col md="8" xs="7">
@@ -135,7 +135,7 @@ class Dashboard extends React.Component {
               </Card>
             </Col>
 
-            <Col lg="3" md="6" sm="6">
+            <Col lg="2" md="6" sm="6">
               <Card className="card-stats">
                 <CardBody>
                   <Row>
@@ -163,6 +163,10 @@ class Dashboard extends React.Component {
             </Col>
           </Row>
           <Row>
+
+
+
+
             <Col md="12">
               <Card>
                 <CardHeader>
