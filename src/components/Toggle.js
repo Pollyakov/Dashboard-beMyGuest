@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Container, Table, Col, Button } from "react-bootstrap";
+import { Container, Table, Col, Button, Switch } from "react-bootstrap";
 import BootstrapTable from 'react-bootstrap-table-next';
 import 'react-bootstrap-table-next/dist/react-bootstrap-table2.min.css';
 // reactstrap components
@@ -13,13 +13,14 @@ import {
 //   Col,
 } from "reactstrap";
 
+
 class Toggle extends Component {
     render() {
         let style1 = {
-            width: "50px";
+            width: "50px",
         }
         let style2 = {
-            width: "100px";
+            width: "100px",
         }
         let style3 = {
             width: "150px"

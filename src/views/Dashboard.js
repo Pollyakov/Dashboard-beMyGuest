@@ -1,21 +1,3 @@
-/*!
-
-=========================================================
-* Paper Dashboard React - v1.2.0
-=========================================================
-
-* Product Page: https://www.creative-tim.com/product/paper-dashboard-react
-* Copyright 2020 Creative Tim (https://www.creative-tim.com)
-
-* Licensed under MIT (https://github.com/creativetimofficial/paper-dashboard-react/blob/master/LICENSE.md)
-
-* Coded by Creative Tim
-
-=========================================================
-
-* The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
-
-*/
 import React from "react";
 // react plugin used to create charts
 import { Line, Pie } from "react-chartjs-2";
@@ -35,6 +17,8 @@ import {
   dashboardEmailStatisticsChart,
   dashboardNASDAQChart,
 } from "variables/charts.js";
+import Toggle from "components/Toggle";
+import ToggleSwitch from "components/ToggleSwitch/ToggleSwitch";
 
 class Dashboard extends React.Component {
   render() {
@@ -46,18 +30,25 @@ class Dashboard extends React.Component {
               <Card className="card-stats">
                 <CardBody>
                   <Row>
-                    <Col md="4" xs="5">
+                      <Col md="4" xs="5">
                       <div className="icon-big text-center icon-warning">
-                        <i className="nc-icon nc-globe text-warning" />
+                      <ToggleSwitch/>
+                       
+                       
                       </div>
                     </Col>
                     <Col md="8" xs="7">
                       <div className="numbers">
-                        <p className="card-category">Capacity</p>
-                        <CardTitle tag="p">150GB</CardTitle>
+                        <p className="card-category">Data Base status</p>
+                        <CardTitle tag="p">ON</CardTitle>
                         <p />
                       </div>
                     </Col>
+
+
+             
+
+                
                   </Row>
                 </CardBody>
                 <CardFooter>
