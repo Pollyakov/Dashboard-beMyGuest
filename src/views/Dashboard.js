@@ -20,6 +20,7 @@ import {
 import Toggle from "components/Toggle";
 import ToggleSwitch from "components/ToggleSwitch/ToggleSwitch";
   import './dashboard.css';
+  import logomeal from "logomeal.svg";
 
 class Dashboard extends React.Component {
   render() {
@@ -27,6 +28,37 @@ class Dashboard extends React.Component {
       <>
         <div className="content">
           <Row className="firstrow">
+
+          <Col lg="2" md="6" sm="6">
+              <Card className="card-stats">
+                <CardBody>
+                  <Row>
+                    <Col md="4" xs="5">
+                      <div className="icon-big text-center icon-warning">
+                        <i className="nc-icon nc-badge text-success" />
+                      </div>
+                    </Col>
+                    <Col md="8" xs="7">
+                      <div className="numbers">
+                        <p className="card-category">Users Registered</p>
+                        <CardTitle tag="p">1,345</CardTitle>
+                        <p />
+                      </div>
+                    </Col>
+                  </Row>
+                </CardBody>
+                <CardFooter>
+                  <hr />
+                  <div className="stats">
+                    <i className="far fa-calendar" /> Last 3 month
+                  </div>
+                </CardFooter>
+              </Card>
+            </Col>
+
+
+
+
             <Col  lg="2" md="6" sm="6">
               <Card className="card-stats">
                 <CardBody> 
@@ -35,6 +67,8 @@ class Dashboard extends React.Component {
                       {/* <div className="icon-big text-center icon-warning"> */}
                       <ToggleSwitch/>
                     </Col>
+              
+
                     <Col md="8" xs="7">
                       <div className="numbers">
                         <p className="card-category">Data Base</p>
@@ -52,7 +86,32 @@ class Dashboard extends React.Component {
                 </CardFooter>
               </Card>
             </Col>
-
+<Col lg="2" md="6" sm="6">
+              <Card className="card-stats">
+                <CardBody>
+                  <Row>
+                    <Col md="4" xs="5">
+                      <div className="icon-big text-center icon-warning">
+                        <i className="nc-icon nc-circle-10 text-danger" />
+                      </div>
+                    </Col>
+                    <Col md="8" xs="7">
+                      <div className="numbers">
+                        <p className="card-category">Users Online</p>
+                        <CardTitle tag="p">23</CardTitle>
+                        <p />
+                      </div>
+                    </Col>
+                  </Row>
+                </CardBody>
+                <CardFooter>
+                  <hr />
+                  <div className="stats">
+                    <i className="far fa-clock" /> In the last hour
+                  </div>
+                </CardFooter>
+              </Card>
+            </Col>
             <Col lg="2" md="6" sm="6">
               <Card className="card-stats">
                 <CardBody>
@@ -86,63 +145,11 @@ class Dashboard extends React.Component {
                 <CardBody>
                   <Row>
                     <Col md="4" xs="5">
-                      <div className="icon-big text-center icon-warning">
-                        <i className="nc-icon nc-badge text-success" />
-                      </div>
-                    </Col>
-                    <Col md="8" xs="7">
-                      <div className="numbers">
-                        <p className="card-category">Users Registered</p>
-                        <CardTitle tag="p">1,345</CardTitle>
-                        <p />
-                      </div>
-                    </Col>
-                  </Row>
-                </CardBody>
-                <CardFooter>
-                  <hr />
-                  <div className="stats">
-                    <i className="far fa-calendar" /> Last 3 month
-                  </div>
-                </CardFooter>
-              </Card>
-            </Col>
-            
-            <Col lg="2" md="6" sm="6">
-              <Card className="card-stats">
-                <CardBody>
-                  <Row>
-                    <Col md="4" xs="5">
-                      <div className="icon-big text-center icon-warning">
-                        <i className="nc-icon nc-circle-10 text-danger" />
-                      </div>
-                    </Col>
-                    <Col md="8" xs="7">
-                      <div className="numbers">
-                        <p className="card-category">Users Online</p>
-                        <CardTitle tag="p">23</CardTitle>
-                        <p />
-                      </div>
-                    </Col>
-                  </Row>
-                </CardBody>
-                <CardFooter>
-                  <hr />
-                  <div className="stats">
-                    <i className="far fa-clock" /> In the last hour
-                  </div>
-                </CardFooter>
-              </Card>
-            </Col>
 
-            <Col lg="2" md="6" sm="6">
-              <Card className="card-stats">
-                <CardBody>
-                  <Row>
-                    <Col md="4" xs="5">
                       <div className="icon-big text-center icon-warning">
-                        <img className="nc-icon" src="my_meal.svg" />
+                        <i className="nc-icon nc-basket text-info"/>
                       </div>
+
                     </Col>
                     <Col md="8" xs="7">
                       <div className="numbers">

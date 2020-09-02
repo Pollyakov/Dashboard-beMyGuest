@@ -50,6 +50,7 @@ class Sidebar extends React.Component {
     }
   }
   render() {
+
     return (
       <div
         className="sidebar"
@@ -58,22 +59,27 @@ class Sidebar extends React.Component {
       >
         <div className="logo">
           <a
-            href="https://www.creative-tim.com"
+            href="https://tabsur.herokuapp.com/"
             className="simple-text logo-mini"
           >
             <div className="logo-img">
-              <img src={logo} alt="react-logo" />
+
+
+              <img src={logo} alt="tabsur-logo" />
+
+
+
             </div>
           </a>
           <a
-            href="https://www.creative-tim.com"
+            href="https://tabsur.herokuapp.com/"
             className="simple-text logo-normal"
           >
             Be My Guest
           </a>
         </div>
 
-        
+
         <div className="sidebar-wrapper" ref={this.sidebar}>
           <Nav>
             {this.props.routes.map((prop, key) => {
