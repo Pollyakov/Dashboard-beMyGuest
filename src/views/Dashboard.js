@@ -17,7 +17,7 @@ import {
   dashboardEmailStatisticsChart,
   dashboardNASDAQChart,
 } from "variables/charts.js";
-import Toggle from "components/Toggle";
+
 import ToggleSwitch from "components/ToggleSwitch/ToggleSwitch";
   import './dashboard.css';
   import logomeal from "logomeal.svg";
@@ -60,7 +60,7 @@ class Dashboard extends React.Component {
 
 
             <Col  lg="2" md="6" sm="6">
-              <Card className="card-stats">
+              <Card  className="card-stats">
                 <CardBody> 
                   <Row>
                       <Col md="4" xs="5">
