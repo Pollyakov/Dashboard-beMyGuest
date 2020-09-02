@@ -77,6 +77,7 @@ class Dashboard extends React.Component {
           <Switch>
             {routes.map((prop, key) => {
               return (
+                   prop.invisible ? null:
                 <Route
                   path={prop.layout + prop.path}
                   component={prop.component}
@@ -85,14 +86,14 @@ class Dashboard extends React.Component {
               );
             })}
           </Switch>
-          <Footer fluid />
+          {/* <Footer fluid /> */}
         </div>
-        <FixedPlugin
+        {/* <FixedPlugin
           bgColor={this.state.backgroundColor}
           activeColor={this.state.activeColor}
           handleActiveClick={this.handleActiveClick}
           handleBgClick={this.handleBgClick}
-        />
+        /> */}
       </div>
     );
   }
