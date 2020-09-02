@@ -72,6 +72,8 @@ class Sidebar extends React.Component {
             Be My Guest
           </a>
         </div>
+
+        
         <div className="sidebar-wrapper" ref={this.sidebar}>
           <Nav>
             {this.props.routes.map((prop, key) => {

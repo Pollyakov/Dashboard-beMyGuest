@@ -19,7 +19,7 @@ import {
 } from "variables/charts.js";
 import Toggle from "components/Toggle";
 import ToggleSwitch from "components/ToggleSwitch/ToggleSwitch";
-import './dashboard.css';
+  import './dashboard.css';
 
 class Dashboard extends React.Component {
   render() {
