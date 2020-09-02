@@ -9,6 +9,7 @@ import UserManagemet from "views/UserManagement";
 import UserPage from "views/User.js";
 import UpgradeToPro from "views/Upgrade.js";
 import MealsManagement from "views/MealsManagement";
+import Logs from "views/Logs";
 
 var routes = [
   {
@@ -43,7 +44,7 @@ var routes = [
     path: "/Log-Panel",
     name: "Logs",
     icon: "nc-icon nc-paper",
-    component: TableList,
+    component: Logs,
     layout: "/admin",
   },
   {
