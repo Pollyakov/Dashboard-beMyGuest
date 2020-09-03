@@ -1,12 +1,10 @@
 import React, { Component } from 'react';
-import InformCards from 'components/InformCards';
+import CardsGallery from 'components/CardsGallery/CardsGallery';
 
 class Logs extends Component {
     render() {
         return (
-            <div>
-                <InformCards/>
-            </div>
+                <CardsGallery/>
         );
     }
 }

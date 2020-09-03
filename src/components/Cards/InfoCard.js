@@ -1,15 +1,13 @@
 import React, { Component } from "react";
+import {Card, CardHeader,   CardFooter,   CardBody, CardTitle, Row, Col} from "reactstrap";
 
 class InfoCard extends Component {
     constructor(props) {
         super(props);
-        this.info=info;
-        this.timewindow=timewindow;
-        this.categInfo=categInfo;
 }
   render() {
     return (
-      <div>
+     
         <Col lg="2" md="6" sm="6">
           <Card className="card-stats">
             <CardBody>
@@ -36,7 +34,7 @@ class InfoCard extends Component {
             </CardFooter>
           </Card>
         </Col>
-      </div>
+      
     );
   }
 }

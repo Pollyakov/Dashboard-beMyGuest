@@ -1,18 +1,12 @@
 import React, { Component } from 'react';
-import InfoCard from './InfoCard';
-import { Container, Table, Col, Button } from "react-bootstrap";
-import BootstrapTable from 'react-bootstrap-table-next';
+import InfoCard from '../Cards/InfoCard';
+import ToggleCard from '../Cards/ToggleCard.js';
+import ToggleSwitch from '../ToggleSwitch/ToggleSwitch';
+// import { Container, Table, Col, Button } from "react-bootstrap";
 import axios from "axios";
-import './UserManagement.css';
 import 'react-bootstrap-table-next/dist/react-bootstrap-table2.min.css';
-// reactstrap components
-import {
-  Card,
-  CardHeader,
-  CardBody,
-  CardTitle,
-  Row,
-} from "reactstrap";
+import {Card, CardHeader,   CardFooter,   CardBody, CardTitle, Row, Col} from "reactstrap";
+
 
 class InformCards extends Component {
     constructor(props) {
@@ -36,10 +30,11 @@ class InformCards extends Component {
             
              <div className="content">
               <Row className="firstrow">
-              <InfoCard info={this.state.info} timewindow= {"three month"} categInfo={"DB"}/>
+              <ToggleCard name={"DB"} status={"ON"} />
+              <InfoCard info={this.state.info.toString()} timewindow= {"three month"} categInfo={"Users"}/>
               </Row>
-                
             </div>
+            
         );
     }
 }
