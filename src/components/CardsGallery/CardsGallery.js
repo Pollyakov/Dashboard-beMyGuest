@@ -4,6 +4,7 @@ import ToggleCard from '../Cards/ToggleCard.js';
 import ToggleSwitch from '../ToggleSwitch/ToggleSwitch';
 // import { Container, Table, Col, Button } from "react-bootstrap";
 import axios from "axios";
+import './CardsGallery.css';
 import 'react-bootstrap-table-next/dist/react-bootstrap-table2.min.css';
 import {Card, CardHeader,   CardFooter,   CardBody, CardTitle, Row, Col} from "reactstrap";
 
@@ -29,10 +30,20 @@ class InformCards extends Component {
         return (
             
              <div className="content">
-              <Row className="firstrow">
+              <Row>
+               {/* <Col className="appInfo" md="4"> */}
+               <InfoCard info={this.state.info.toString()} timewindow= {"three month"} categInfo={"Users"}/>
+               <ToggleCard name={"DB"} status={"ON"} />
+             
+              <InfoCard info={this.state.info.toString()} timewindow= {"three month"} categInfo={"Users"}/>
               <ToggleCard name={"DB"} status={"ON"} />
               <InfoCard info={this.state.info.toString()} timewindow= {"three month"} categInfo={"Users"}/>
+            
+              {/* <button class="btn btn-primary btn-lg btn-fill">Reset Server</button> */}
               </Row>
+
+
+
             </div>
             
         );
@@ -40,3 +51,4 @@ class InformCards extends Component {
 }
 
 export default InformCards;
+

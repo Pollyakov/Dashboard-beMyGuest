@@ -5,16 +5,20 @@ class InfoCard extends Component {
     constructor(props) {
         super(props);
 }
-  render() {
+
+  render()
+const commonProps = {myProp1: 'prop1',myProp2: 'prop2'};
+  {
     return (
-     
         <Col lg="2" md="6" sm="6">
           <Card className="card-stats">
             <CardBody>
               <Row>
                 <Col md="4" xs="5">
                   <div className="icon-big text-center icon-warning">
-                    <i className="nc-icon nc-badge text-success" />
+                    {/* <i className="nc-icon nc-badge text-success" /> */}
+                    <i className= {this.props.iconCateg} {this.props.iconKind } {this.props.iconColor}/>
+                    
                   </div>
                 </Col>
                 <Col md="8" xs="7">

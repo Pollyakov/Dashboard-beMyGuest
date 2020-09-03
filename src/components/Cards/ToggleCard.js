@@ -8,7 +8,7 @@ class ToggleCard extends Component {
 }
   render() {
     return (
-        <Col  lg="3" md="6" sm="6">
+        <Col  lg="2" md="6" sm="6">
               <Card  className="card-stats">
                 <CardBody> 
                   <Row>
