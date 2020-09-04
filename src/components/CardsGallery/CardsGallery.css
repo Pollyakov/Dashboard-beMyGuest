@@ -3,3 +3,8 @@
     justify-content: space-around;
    
 }
+.reset-server{
+    width:32%;
+    position: relative;
+    bottom: 20px;
+}
