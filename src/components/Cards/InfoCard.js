@@ -7,7 +7,7 @@ class InfoCard extends Component {
 }
 
   render()
-const commonProps = {myProp1: 'prop1',myProp2: 'prop2'};
+
   {
     return (
         <Col lg="2" md="6" sm="6">
@@ -17,7 +17,7 @@ const commonProps = {myProp1: 'prop1',myProp2: 'prop2'};
                 <Col md="4" xs="5">
                   <div className="icon-big text-center icon-warning">
                     {/* <i className="nc-icon nc-badge text-success" /> */}
-                    <i className= {this.props.iconCateg} {this.props.iconKind } {this.props.iconColor}/>
+                    <i className= {this.props.icon}/>
                     
                   </div>
                 </Col>
