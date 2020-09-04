@@ -14,6 +14,7 @@ import { Button,
   CardTitle,
   Row,
   Col,
+  Alert,
 } from "reactstrap";
 // import Button from 'elements/CustomButton/CustomButton.js';
 
@@ -22,7 +23,25 @@ class InformCards extends Component {
     super(props);
     this.state = {
       info: [],
+      // reset: "reset wasn't produced",
     };
+    this.handleResetClick = this.handleResetClick.bind(this);
+
+  }
+  handleResetClick() {
+    
+     axios
+    .get("https://tabsur.herokuapp.com/api/system/reset")
+    // .then((response) => {
+        .then((response) => {
+          alert("the server reset was done");
+          // this.setState({
+          //   reset: response.data.reset,
+          }) 
+         
+          
+     
+
   }
   componentDidMount() {
     axios
@@ -40,7 +59,7 @@ class InformCards extends Component {
   }
 
   render() {
-    console.log(String("Pervij ", this.state.users));
+   
     return (
       <div className="content">
         <Row>
@@ -72,43 +91,19 @@ class InformCards extends Component {
             categInfo={"Meals Today"}
           />
           {/* </Row>
-
           <Row>
           <Col md="4"> */}
           {/* <button class="btn btn-dangery btn-lg btn-fill">Reset Server</button> */}
           <Button 
-                
+                onClick={this.handleResetClick}
                 color="danger"
                 block
-                className="btn-round reset-server"
+                className="btn-round reset-server btn btn-primary btn-lg btn-fill"
                 target="_blank"
               >
                Reset Server
               </Button>
-          {/* </Col> */}
-
           </Row>
-
-         
-                
-          {/* <Row>
-          <Col lg="2" md="6" sm="6">
-          <Card className="card-stats">
-            <CardBody>
-              <Row>
-             
-                <button class="btn btn-primary btn-lg btn-fill">Reset Server</button>
-                
-               
-              </Row>
-            </CardBody>
-            <CardFooter>
-          
-            </CardFooter>
-          </Card>
-        </Col>
-      
-        </Row> */}
       </div>
     );
   }
