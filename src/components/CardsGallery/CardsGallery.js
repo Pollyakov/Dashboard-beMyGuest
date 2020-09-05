@@ -17,6 +17,7 @@ class InformCards extends Component {
   }
 
   handleResetClick() {
+    alert("Please approve the reset")
      axios
     .get("https://tabsur.herokuapp.com/api/system/reset")
         .then((response) => {
@@ -38,7 +39,7 @@ class InformCards extends Component {
           mealsToday: response.data.mealsCreatedToday,
         });
       });
-      
+
   }
 
   render() {
