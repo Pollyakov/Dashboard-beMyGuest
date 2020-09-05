@@ -10,6 +10,7 @@ import UserPage from "views/User.js";
 import UpgradeToPro from "views/Upgrade.js";
 import MealsManagement from "views/MealsManagement";
 import Logs from "views/Logs";
+import StatisticsPage from "views/Statistics/StatisticsPage";
 
 var routes = [
   {
@@ -23,7 +24,7 @@ var routes = [
     path: "/statistics",
     name: "Statistics",
     icon: "nc-icon nc-chart-pie-36",
-    component: Dashboard,
+    component: StatisticsPage,
     layout: "/admin",
   },
   {

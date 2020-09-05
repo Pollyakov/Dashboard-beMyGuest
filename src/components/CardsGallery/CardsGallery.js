@@ -1,22 +1,10 @@
 import React, { Component } from "react";
 import InfoCard from "../Cards/InfoCard";
 import ToggleCard from "../Cards/ToggleCard.js";
-import ToggleSwitch from "../ToggleSwitch/ToggleSwitch";
-// import { Container, Table, Col, Button } from "react-bootstrap";
 import axios from "axios";
 import "./CardsGallery.css";
 import "react-bootstrap-table-next/dist/react-bootstrap-table2.min.css";
-import { Button,
-  Card,
-  CardHeader,
-  CardFooter,
-  CardBody,
-  CardTitle,
-  Row,
-  Col,
-  Alert,
-} from "reactstrap";
-// import Button from 'elements/CustomButton/CustomButton.js';
+import { Button, Card, CardHeader, CardFooter, CardColumnsPropsBody, CardTitle, Row, Col, Alert} from "reactstrap";
 
 class InformCards extends Component {
   constructor(props) {
@@ -26,23 +14,17 @@ class InformCards extends Component {
       // reset: "reset wasn't produced",
     };
     this.handleResetClick = this.handleResetClick.bind(this);
-
   }
+
   handleResetClick() {
-    
      axios
     .get("https://tabsur.herokuapp.com/api/system/reset")
-    // .then((response) => {
         .then((response) => {
-          alert("the server reset was done");
-          // this.setState({
-          //   reset: response.data.reset,
+          alert(String(response.statusText)==="OK"?"The server was reseted": "Eroor hac occured");
           }) 
-         
-          
-     
-
   }
+
+
   componentDidMount() {
     axios
       .get("https://tabsur.herokuapp.com/api/system/health")
@@ -56,10 +38,10 @@ class InformCards extends Component {
           mealsToday: response.data.mealsCreatedToday,
         });
       });
+      
   }
 
   render() {
-   
     return (
       <div className="content">
         <Row>
@@ -73,7 +55,7 @@ class InformCards extends Component {
           />
           <InfoCard
             icon={"nc-icon nc-circle-10 text-danger"}
-            info={this.state.onlineUsers===null? "0": String(this.state.onlineUsers)}
+            info={String(this.state.onlineUsers)}
             timewindow={"last hour"}
             categInfo={"Users Online"}
           />
