@@ -10,6 +10,10 @@ import {
   CardTitle,
   CardText,
   CardBody,
+  InputGroup,
+  InputGroupText,
+  InputGroupAddon,
+  Input
 } from "reactstrap";
 
 class LogsCard extends Component {
@@ -51,8 +55,19 @@ class LogsCard extends Component {
   render() {
     return (
       <Card className="card-frame">
-        <CardHeader><h4> Data Base Logs</h4></CardHeader>
-        <hr/>
+        <CardHeader><h4> Data Base Logs</h4>
+        <form>
+              <InputGroup className="no-border">
+                <Input placeholder="Search..." />
+                <InputGroupAddon addonType="append">
+                  <InputGroupText>
+                    <i className="nc-icon nc-zoom-split" />
+                  </InputGroupText>
+                </InputGroupAddon>
+              </InputGroup>
+            </form>
+        </CardHeader>
+      
         <CardBody>
           <CardText>{this.state.logs}</CardText>
           <hr/>

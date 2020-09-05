@@ -1,4 +1,20 @@
 h4{
     margin-bottom: 0ch;
     margin-top: 0ch;
+        font-weight: 350;
+}
+
+.no-border{
+    
+    margin-top: 1em;
+
+}
+
+/* .card-header {
+    display:flex;
+    justify-content: space-between;
+} */
+
+.form{
+    width: 300px;
 }

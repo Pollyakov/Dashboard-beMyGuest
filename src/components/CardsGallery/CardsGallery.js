@@ -32,7 +32,7 @@ class InformCards extends Component {
         this.setState({
           info:   response.data.DB,
           server: response.data.server,
-          users:  response.data.users[0].count,
+          users:  response.data.users,
           onlineUsers: response.data.onlineUsers,
           meals:response.data.activeMeals,
           mealsToday: response.data.mealsCreatedToday,
