@@ -25,7 +25,6 @@ class InformCards extends Component {
           }) 
   }
 
-
   componentDidMount() {
     axios
       .get("https://tabsur.herokuapp.com/api/system/health")
@@ -44,7 +43,7 @@ class InformCards extends Component {
 
   render() {
     return (
-      <div className="content">
+     
         <Row>
           <ToggleCard name={"DB"} status={this.state.info? "On":"Off"} />
           <ToggleCard name={"Server"} status={this.state.server? "On":"Off"} />
@@ -87,7 +86,7 @@ class InformCards extends Component {
                Reset Server
               </Button>
           </Row>
-      </div>
+     
     );
   }
 }

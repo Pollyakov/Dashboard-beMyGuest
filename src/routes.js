@@ -5,12 +5,11 @@ import Typography from "views/Typography.js";
 import TableList from "views/Tables.js";
 import Maps from "views/Map.js";
 import UserManagemet from "views/UserManagement";
-
-import UserPage from "views/User.js";
+// import UserPage from "views/User.js";
 import UpgradeToPro from "views/Upgrade.js";
 import MealsManagement from "views/MealsManagement";
-import Logs from "views/Logs";
 import StatisticsPage from "views/Statistics/StatisticsPage";
+import LogsServerInfo from "views/LogsServerInfo";
 
 var routes = [
   {
@@ -43,9 +42,9 @@ var routes = [
   },
   {
     path: "/Log-Panel",
-    name: "Logs",
+    name: "Logs and server info",
     icon: "nc-icon nc-paper",
-    component: Logs,
+    component: LogsServerInfo,
     layout: "/admin",
   },
   {
@@ -55,13 +54,13 @@ var routes = [
     component: Notifications,
     layout: "/admin",
   },
-  {
-    path: "/server-info",
-    name: "Server Info",
-    icon: "nc-icon nc-alert-circle-i",
-    component: Dashboard,
-    layout: "/admin",
-  },
+  // {
+  //   path: "/server-info",
+  //   name: "Server Info",
+  //   icon: "nc-icon nc-alert-circle-i",
+  //   component: Dashboard,
+  //   layout: "/admin",
+  // },
   {
     path: "/maps",
     name: "(Maps)",
