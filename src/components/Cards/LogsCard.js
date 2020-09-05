@@ -18,20 +18,20 @@ class LogsCard extends Component {
     this.state = {
       logs: [],
     };
-    // this.handleResetClick = this.handleResetClick.bind(this);
+    this.handleClick = this.handleClick.bind(this);
   }
 
-  //   handleResetClick() {
-  //     alert("Please approve the reset")
-  //      axios
-  //     .get("https://tabsur.herokuapp.com/api/system/reset")
-  //         .then((response) => {
-  //           alert(String(response.statusText)==="OK"?"The server was reseted": "Eroor hac occured");
-  //           })
-  //   }
+    handleClick() {
+       axios
+      .delete("https://tabsur.herokuapp.com/api/system/log")
+          .then((response) => {
+            if (response && response.data) {
+              this.setState({ logs: response.data });
+          }
+            })
+    }
 
   componentDidMount() {
-
   axios({
     method: "get",
     url: "https://tabsur.herokuapp.com/api/system/log",
@@ -52,12 +52,14 @@ class LogsCard extends Component {
     return (
       <Card className="card-frame">
         <CardHeader><h4> Data Base Logs</h4></CardHeader>
+        <hr/>
         <CardBody>
           <CardText>{this.state.logs}</CardText>
-          <Button
+          <hr/>
+          <Button 
+          className="btn-round btn btn-info btn-md btn-fill"
             color="info"
-            href="#pablo"
-            onClick={(e) => e.preventDefault()}
+            onClick={this.handleClick}
           >
             Clear Logs
           </Button>
