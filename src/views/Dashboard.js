@@ -167,11 +167,8 @@ class Dashboard extends React.Component {
               </Card>
             </Col>
           </Row>
+
           <Row>
-
-
-
-
             <Col md="12">
               <Card>
                 <CardHeader>
@@ -222,6 +219,7 @@ class Dashboard extends React.Component {
                 </CardFooter>
               </Card>
             </Col>
+            
             <Col md="8">
               <Card className="card-chart">
                 <CardHeader>
