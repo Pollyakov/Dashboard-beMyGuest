@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import axios from "axios";
+import "./LogsCard.css";
 import {
   Button,
   Card,
@@ -30,27 +31,35 @@ class LogsCard extends Component {
   //   }
 
   componentDidMount() {
-    axios
-      .get("https://tabsur.herokuapp.com/api/system/log")
-      .then((response) => {
-        console.log("Logs: ", response.data);
-        this.setState({
-          logs: response.data,
-        });
-      });
-  }
+
+  axios({
+    method: "get",
+    url: "https://tabsur.herokuapp.com/api/system/log",
+    headers: {
+        // "Access-Control-Allow-Origin": "*",
+        "Content-Type": "application/json",
+        Accept: "application/json"
+    }
+})
+.then(response => {
+    if (response && response.data) {
+        this.setState({ logs: response.data });
+    }
+})
+.catch(error => console.log(error));
+}
   render() {
     return (
       <Card className="card-frame">
-        <CardHeader> Data Base Logs</CardHeader>
+        <CardHeader><h4> Data Base Logs</h4></CardHeader>
         <CardBody>
           <CardText>{this.state.logs}</CardText>
           <Button
-            color="primary"
+            color="info"
             href="#pablo"
             onClick={(e) => e.preventDefault()}
           >
-            Go somewhere
+            Clear Logs
           </Button>
         </CardBody>
       </Card>
