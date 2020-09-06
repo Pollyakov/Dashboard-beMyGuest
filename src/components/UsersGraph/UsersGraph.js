@@ -7,11 +7,7 @@ import {Card, CardHeader,
   CardTitle,
   Row,
   Col} from "reactstrap";
-import {
-//   dashboard24HoursPerformanceChart,
-//   dashboardEmailStatisticsChart,
-  dashboardNASDAQChart,
-} from "variables/charts.js";
+import { getAllJSDocTags } from "typescript";
 const chartColor = '#FFFFFF';
 
 class UsersGraph extends Component {
@@ -21,14 +17,13 @@ class UsersGraph extends Component {
           data: null,
         };
       }
+    
       componentDidMount() {
         axios
-          .get("http://tabsur.herokuapp.com/api/system/stats")
+          .get("http://tabsur.herokuapp.com/api/system/statsUsers")
           .then((response) => {
-              console.log(response.data);
             this.setState({
               data: response.data,
-              
             });
           });
       }
@@ -36,43 +31,57 @@ class UsersGraph extends Component {
   render(){
     const data = (canvas) => {
       const getLabels=()=> {
-        return this.state.data && this.state.data.userStats.map((element)=>{
+        return this.state.data && this.state.data.map((element)=>{
           return String(element.days_before)
         })
-     
       }
-      var ctx = canvas.getContext("2d");
-  
-      var gradientStroke = ctx.createLinearGradient(500, 0, 100, 0);
-      gradientStroke.addColorStop(0, '#80b6f4');
-      gradientStroke.addColorStop(1, chartColor);
-  
-      var gradientFill = ctx.createLinearGradient(0, 170, 0, 50);
-      gradientFill.addColorStop(0, "rgba(128, 182, 244, 0)");
-      gradientFill.addColorStop(1, "rgba(249, 99, 59, 0.40)");
+      // console.log("GetLabels():  ", getLabels());
+      
+      // let arr= labels.map(label=>{return (-1)*label});
+    
+      const getNewUsers=()=> {
+        return this.state.data && this.state.data.map((element)=>{
+          return element.userscreated
+        })
+      }
+    //  console.log(getNewUsers());
+      const getActiveUsers=()=> {
+        return this.state.data && this.state.data.map((element)=>{
+          return element.activeusers
+        })
+      }
+      
       return {
         
-          labels: getLabels(),
-          datasets: [{
-              label: "Active Users",
-              borderColor: "#f96332",
-              pointBorderColor: "#FFF",
-              pointBackgroundColor: "#f96332",
-              pointBorderWidth: 2,
-              pointHoverRadius: 4,
-              pointHoverBorderWidth: 1,
+          labels:  getLabels(),
+          datasets: [
+            {
+              data: getNewUsers(),
+              fill: false,
+              borderColor: "#51CACF",
+              backgroundColor: "transparent",
+              pointBorderColor: "#51CACF",
               pointRadius: 4,
-              fill: true,
-              backgroundColor: gradientFill,
-              borderWidth: 2,
-              data: [542, 480, 430, 550, 530, 453, 380, 434, 568, 610, 700, 630]
-          }]
+              pointHoverRadius: 4,
+              pointBorderWidth: 8,
+            },
+            {
+              data: getActiveUsers(),
+              fill: false,
+              borderColor: "#fbc658",
+              backgroundColor: "transparent",
+              pointBorderColor: "#fbc658",
+              pointRadius: 4,
+              pointHoverRadius: 4,
+              pointBorderWidth: 8,
+            },
+          ]
       }
   };
   const options = {
       maintainAspectRatio: false,
       legend: {
-          display: false
+          display: true,
       },
       tooltips: {
           bodySpacing: 4,
@@ -85,71 +94,66 @@ class UsersGraph extends Component {
       },
       responsive: 1,
       scales: {
-          yAxes: [{
-              display:0,
+          yAxes: [{ 
+              stepsize: 1,
+              display:1,
               ticks: {
-                  display: false
+                  display: true,
+                  // stepSize: 1,
               },
               gridLines: {
-                  zeroLineColor: "transparent",
-                  drawTicks: false,
-                  display: false,
-                  drawBorder: false
+                  zeroLineColor: "#ef8157",
+                  drawTicks: true,
+                  display:true,
+                  drawBorder: true, 
+                  stepsize: 0.5,
               }
           }],
-          xAxes: [{
-              display:0,
+          xAxes: [
+            {
+              // type: 'time',
+              time: {stepSize:1},
+              distribution: 'linear',
+              display:1,
               ticks: {
-                  display: false
+                  display: true,
+                  reverse: true,
+                  sourse: 'labels',
               },
               gridLines: {
-                  zeroLineColor: "transparent",
-                  drawTicks: false,
-                  display: false,
-                  drawBorder: false
+                  zeroLineColor: "#ef8157",
+                  drawTicks: true,
+                  display: true,
+                  drawBorder: true,
               }
-          }]
+          }
+        ]
       },
       layout:{
           padding:{left:0,right:0,top:15,bottom:15}
       }
   };
-    let labels=[];
-    // for (let i=0; i<=this.state.data.length-1; i++){
-    //     this.state.data.userStats.days_before
-    //     labels[i][0]=labels[i];
-    //     console.log(labels[i]);
-    // } 
-    
-
-    // let data=[];
-    // for (let i=0; i<=this.state.data.length-1; i++){
-    //      data[i][1]=data[i];
-    //      console.log(data[i]);
-    // } 
-    // console.log(data);
-    // dashboardNASDAQChart.data.labels = labels;   
-    // dashboardNASDAQChart.data.datasets[0].data = data;
+ 
     return (
       <Row>
         <Col md="12">
           <Card className="card-chart">
             <CardHeader>
               <CardTitle tag="h5">Users Per Day</CardTitle>
-              <p className="card-category">New registered users per day</p>
+              <p className="card-category">New Users and Active Users per day</p>
             </CardHeader>
             <CardBody>
               <Line
                 data={data}
                 options={options}
                 width={700}
-                height={100}
+                height={200}
               />
             </CardBody>
             <CardFooter>
               <div className="chart-legend">
-                <i className="fa fa-circle text-info" /> Tesla Model S{" "}
-                <i className="fa fa-circle text-warning" /> BMW 5 Series S{" "}
+                <i className="fa fa-circle text-danger" /> New Users {" "}
+                <i className="fa fa-circle text-warning" /> Users Online  {" "}
               </div>
               <hr />
               <div className="card-stats">

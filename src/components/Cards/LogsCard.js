@@ -39,11 +39,11 @@ class LogsCard extends Component {
   axios({
     method: "get",
     url: "https://tabsur.herokuapp.com/api/system/log",
-    headers: {
-        // "Access-Control-Allow-Origin": "*",
-        "Content-Type": "/json",
-        Accept: "/json"
-    }
+    // headers: {
+    //     // "Access-Control-Allow-Origin": "*",
+    //     "Content-Type": "/json",
+    //     Accept: "/json"
+    // }
 })
 .then(response => {
     if (response && response.data) {

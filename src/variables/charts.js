@@ -154,7 +154,7 @@ const dashboardNASDAQChart = {
     labels: [
       "Jan",
       "Feb",
-      "Mar",
+      "Mar",  
       "Apr",
       "May",
       "Jun",
@@ -176,11 +176,6 @@ const dashboardNASDAQChart = {
         pointHoverRadius: 4,
         pointBorderWidth: 8,
       },
-
-
-
-
-
 
 
       {
