@@ -20,7 +20,7 @@ class LogsCard extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      logs: [],
+      logs: null,
     };
     this.handleClick = this.handleClick.bind(this);
   }
@@ -52,10 +52,17 @@ class LogsCard extends Component {
 })
 .catch(error => console.log(error));
 }
-  render() {
+  render()  {
+  const toJson=()=> {
+    return this.state.logs && this.state.logs.map((element)=>{
+      return <div>{element}</div>
+      {/* <hr /> */}
+    })
+  }
+          
     return (
       <Card className="card-frame">
-        <CardHeader><h4> Server Log</h4>
+        <CardHeader tag="p"><h4> Server Log</h4>
         <form>
               <InputGroup className="no-border">
                 <Input placeholder="Search..." />
@@ -69,7 +76,7 @@ class LogsCard extends Component {
         </CardHeader>
       
         <CardBody>
-          <CardText>{this.state.logs}</CardText>
+          <CardText>{toJson()}</CardText>
           <hr/>
           <Button 
           className="btn-round btn btn-info btn-md btn-fill"
