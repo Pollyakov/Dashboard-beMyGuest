@@ -11,17 +11,23 @@ class InformCards extends Component {
     super(props);
     this.state = {
       info: [],
+
       // reset: "reset wasn't produced",
     };
     this.handleResetClick = this.handleResetClick.bind(this);
   }
 
   handleResetClick() {
-    alert("Please approve the reset")
+    return (
+    <Alert color="primary">
+     The server will be reseting.
+    </Alert>)
+
+
      axios
     .get("https://tabsur.herokuapp.com/api/system/reset")
         .then((response) => {
-          alert(String(response.statusText)==="OK"?"The server was reseted": "Eroor hac occured");
+          alert(String(response.statusText)==="OK"?"The server was reseted": "Error hac occured");
           }) 
   }
 
@@ -85,6 +91,7 @@ class InformCards extends Component {
               >
                Reset Server
               </Button>
+              {this.state.open && this.handleResetClick()}
           </Row>
      
     );

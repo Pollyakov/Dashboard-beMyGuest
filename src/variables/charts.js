@@ -176,6 +176,13 @@ const dashboardNASDAQChart = {
         pointHoverRadius: 4,
         pointBorderWidth: 8,
       },
+
+
+
+
+
+
+
       {
         data: [0, 5, 10, 12, 20, 27, 30, 34, 42, 45, 55, 63],
         fill: false,

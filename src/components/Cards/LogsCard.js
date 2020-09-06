@@ -41,8 +41,8 @@ class LogsCard extends Component {
     url: "https://tabsur.herokuapp.com/api/system/log",
     headers: {
         // "Access-Control-Allow-Origin": "*",
-        "Content-Type": "application/json",
-        Accept: "application/json"
+        "Content-Type": "/json",
+        Accept: "/json"
     }
 })
 .then(response => {
@@ -55,7 +55,7 @@ class LogsCard extends Component {
   render() {
     return (
       <Card className="card-frame">
-        <CardHeader><h4> Data Base Logs</h4>
+        <CardHeader><h4> Server Log</h4>
         <form>
               <InputGroup className="no-border">
                 <Input placeholder="Search..." />
