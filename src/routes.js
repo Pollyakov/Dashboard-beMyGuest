@@ -47,13 +47,13 @@ var routes = [
     component: LogsServerInfo,
     layout: "/admin",
   },
-  {
-    path: "/notifications",
-    name: "Notifications",
-    icon: "nc-icon nc-bell-55",
-    component: Notifications,
-    layout: "/admin",
-  },
+  // {
+  //   path: "/notifications",
+  //   name: "Notifications",
+  //   icon: "nc-icon nc-bell-55",
+  //   component: Notifications,
+  //   layout: "/admin",
+  // },
   // {
   //   path: "/server-info",
   //   name: "Server Info",
@@ -61,13 +61,13 @@ var routes = [
   //   component: Dashboard,
   //   layout: "/admin",
   // },
-  {
-    path: "/maps",
-    name: "(Maps)",
-    icon: "nc-icon",
-    component: Maps,
-    layout: "/admin",
-  },
+  // {
+  //   path: "/maps",
+  //   name: "(Maps)",
+  //   icon: "nc-icon",
+  //   component: Maps,
+  //   layout: "/admin",
+  // },
   // {
   //   path: "/tables",
   //   name: "Table List",

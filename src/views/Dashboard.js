@@ -31,26 +31,18 @@ class Dashboard extends React.Component {
         <div className="content">
           <Row className="firstrow">
               <CardsGallery/>
-              
-          {/* <Col lg="12" md="12" sm="12">
-            
-            </Col> */}
           </Row>
 
-         
           <Row>
             <Col md="6">
                 <UserManagement/>
             </Col>
-            
             <Col md="6">
-              {/* <Card className="card-chart"> */}
                <MealsGraph/>
                <UsersGraph/>
-             
-              {/* </Card> */}
             </Col>
           </Row>
+          
         </div>
       </>
     );

@@ -128,7 +128,7 @@ class MealsManagement extends React.Component {
             <Col md="12">
               <Card className="card-plain">
                 <CardHeader>
-                  <CardTitle tag="h4">Meals MealsManagement</CardTitle>
+                  <CardTitle  className="table-header" tag="h4">Meals MealsManagement</CardTitle>
                   <p className="card-category">
                     Tablica pro aruhot
                   </p>

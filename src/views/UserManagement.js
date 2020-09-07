@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import { Container, Table, Col, Button } from "react-bootstrap";
 import BootstrapTable from "react-bootstrap-table-next";
+// import paginationFactory from 'react-bootstrap-table2-paginator';
 import axios from "axios";
 import "./UserManagement.css";
 import "react-bootstrap-table-next/dist/react-bootstrap-table2.min.css";
@@ -71,6 +72,7 @@ class UserManagement extends React.Component {
                     data={this.state.users}
                     columns={columns}
                     selectRow={selectRow}
+                    // pagination={paginationFactory()}
                   />
 
                   <div className="button-container">
