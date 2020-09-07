@@ -1,139 +1,192 @@
 import React, { Component } from "react";
 import { Line, Pie } from "react-chartjs-2";
 import axios from "axios";
-import {Card, CardHeader,   
-    CardBody,
+import {
+  Card, CardHeader,
+  CardBody,
   CardFooter,
   CardTitle,
   Row,
-  Col} from "reactstrap";
+  Col
+} from "reactstrap";
 import { getAllJSDocTags } from "typescript";
 const chartColor = '#FFFFFF';
 
 class UsersGraph extends Component {
-    constructor(props) {
-        super(props);
-        this.state = {
-          data: null,
-        };
-      }
-    
-      componentDidMount() {
-        axios
-          .get("http://tabsur.herokuapp.com/api/system/statsUsers")
-          .then((response) => {
-            this.setState({
-              data: response.data,
-            });
-          });
-      }
- 
-  render(){
-    const data = (canvas) => {
-      const getLabels=()=> {
-        return this.state.data && this.state.data.map((element)=>{
+  constructor(props) {
+    super(props);
+    this.state = {
+      data: null,
+    };
+  }
+
+  componentDidMount() {
+    axios
+      .get("http://tabsur.herokuapp.com/api/system/statsUsers")
+      .then((response) => {
+        this.setState({
+          data: response.data,
+        });
+      });
+  }
+
+  render() {
+    //     return {
+    //         labels:  getLabels(),
+    //         datasets: [
+    //           {
+    //             data: getNewUsers(),
+    //             fill: false,
+    //             borderColor: "#51CACF",
+    //             backgroundColor: "transparent",
+    //             pointBorderColor: "#51CACF",
+    //             pointRadius: 4,
+    //             pointHoverRadius: 4,
+    //             pointBorderWidth: 8,
+    //           },
+    //           {
+    //             data: getActiveUsers(),
+    //             fill: false,
+    //             borderColor: "#fbc658",
+    //             backgroundColor: "transparent",
+    //             pointBorderColor: "#fbc658",
+    //             pointRadius: 4,
+    //             pointHoverRadius: 4,
+    //             pointBorderWidth: 8,
+    //           },
+    //         ]
+    //     }
+    // };
+
+
+    const options = {
+        maintainAspectRatio: false,
+        legend: {
+            display: false,
+        },
+        tooltips: {
+            bodySpacing: 4,
+            mode:"nearest",
+            intersect: 0,
+            position:"nearest",
+            xPadding:10,
+            yPadding:10,
+            caretPadding:10
+        },
+        responsive: 1,
+        scales: {
+            yAxes: [{ 
+                stepsize: 1,
+                display:1,
+                ticks: {
+                    display: true,
+                    stepSize: 1,
+                },
+                gridLines: {
+                    zeroLineColor: "#ef8157",
+                    drawTicks: true,
+                    display:true,
+                    drawBorder: true, 
+                    stepsize: 0.5,
+                }
+            }],
+            xAxes: [
+              {
+                // type: 'time',
+                time: {stepSize:1},
+                distribution: 'linear',
+                display:1,
+                ticks: {
+                    display: true,
+                    reverse: true,
+                    sourse: 'labels',
+                },
+                gridLines: {
+                    zeroLineColor: "#ef8157",
+                    drawTicks: true,
+                    display: true,
+                    drawBorder: true,
+                }
+            }
+          ]
+        },
+        layout:{
+            padding:{left:0,right:0,top:15,bottom:15}
+        }
+    };
+    const getLabels = () => {
+      if (this.state.data) {
+        return this.state.data.map((element) => {
           return String(element.days_before)
         })
+      } else {
+        return [];
       }
-      // console.log("GetLabels():  ", getLabels());
-      
-      // let arr= labels.map(label=>{return (-1)*label});
-    
-      const getNewUsers=()=> {
-        return this.state.data && this.state.data.map((element)=>{
-          return element.userscreated
+    }
+    const getNewUsers = () => {
+      if (this.state.data) {
+        return this.state.data.map((element) => {
+          return parseInt(element.userscreated)
         })
+      } else {
+        return [];
       }
-    //  console.log(getNewUsers());
-      const getActiveUsers=()=> {
-        return this.state.data && this.state.data.map((element)=>{
+    }
+    const getActiveUsers = () => {
+      if (this.state.data) {
+        return this.state.data.map((element) => {
           return element.activeusers
         })
       }
-      
-      return {
-        
-          labels:  getLabels(),
-          datasets: [
-            {
-              data: getNewUsers(),
-              fill: false,
-              borderColor: "#51CACF",
-              backgroundColor: "transparent",
-              pointBorderColor: "#51CACF",
-              pointRadius: 4,
-              pointHoverRadius: 4,
-              pointBorderWidth: 8,
-            },
-            {
-              data: getActiveUsers(),
-              fill: false,
-              borderColor: "#fbc658",
-              backgroundColor: "transparent",
-              pointBorderColor: "#fbc658",
-              pointRadius: 4,
-              pointHoverRadius: 4,
-              pointBorderWidth: 8,
-            },
-          ]
+      else {
+        return [];
       }
-  };
-  const options = {
-      maintainAspectRatio: false,
-      legend: {
-          display: true,
-      },
-      tooltips: {
-          bodySpacing: 4,
-          mode:"nearest",
-          intersect: 0,
-          position:"nearest",
-          xPadding:10,
-          yPadding:10,
-          caretPadding:10
-      },
-      responsive: 1,
-      scales: {
-          yAxes: [{ 
-              stepsize: 1,
-              display:1,
-              ticks: {
-                  display: true,
-                  // stepSize: 1,
-              },
-              gridLines: {
-                  zeroLineColor: "#ef8157",
-                  drawTicks: true,
-                  display:true,
-                  drawBorder: true, 
-                  stepsize: 0.5,
-              }
-          }],
-          xAxes: [
-            {
-              // type: 'time',
-              time: {stepSize:1},
-              distribution: 'linear',
-              display:1,
-              ticks: {
-                  display: true,
-                  reverse: true,
-                  sourse: 'labels',
-              },
-              gridLines: {
-                  zeroLineColor: "#ef8157",
-                  drawTicks: true,
-                  display: true,
-                  drawBorder: true,
-              }
-          }
-        ]
-      },
-      layout:{
-          padding:{left:0,right:0,top:15,bottom:15}
-      }
-  };
- 
+    }
+
+    let labels = [];
+    let newUsers = [];
+    let activeUsers = [];
+    if (this.state.data) {
+       labels = getLabels();
+       newUsers = getNewUsers();
+       activeUsers = getActiveUsers();
+    }
+
+    const data = {
+      labels: labels,      
+      datasets: [
+        {
+          data: newUsers,
+          fill: false,
+          borderColor: "#fbc658",
+          backgroundColor: "transparent",
+          pointBorderColor: "#fbc658",
+          pointRadius: 4,
+          pointHoverRadius: 4,
+          pointBorderWidth: 8,
+        },
+
+
+        {
+          data: activeUsers,
+          fill: false,
+          borderColor: "#51CACF",
+          backgroundColor: "transparent",
+          pointBorderColor: "#51CACF",
+          pointRadius: 4,
+          pointHoverRadius: 4,
+          pointBorderWidth: 8,
+        },
+      ],
+    };
+
+    // const options = {
+    //   legend: {
+    //     display: false,
+    //     position: "top",
+    //   },
+    // };
+
     return (
       <Row>
         <Col md="12">
@@ -143,17 +196,19 @@ class UsersGraph extends Component {
               <p className="card-category">New Users and Active Users per day</p>
             </CardHeader>
             <CardBody>
+              {this.state.data ? 
               <Line
                 data={data}
                 options={options}
                 width={700}
                 height={200}
-              />
+              /> : null}
+
             </CardBody>
             <CardFooter>
               <div className="chart-legend">
-                <i className="fa fa-circle text-danger" /> New Users {" "}
-                <i className="fa fa-circle text-warning" /> Users Online  {" "}
+                <i className="fa fa-circle text-warning" /> New Users {" "}
+                <i className="fa fa-circle text-info" /> Users Online  {" "}
               </div>
               <hr />
               <div className="card-stats">
@@ -162,9 +217,9 @@ class UsersGraph extends Component {
             </CardFooter>
           </Card>
         </Col>
-      </Row>
+      </Row >
     );
-  
-}
+
+  }
 }
 export default UsersGraph;
