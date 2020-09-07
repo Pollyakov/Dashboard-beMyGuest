@@ -58,6 +58,7 @@ const dashboard24HoursPerformanceChart = {
             fontColor: "#9f9f9f",
             beginAtZero: false,
             maxTicksLimit: 5,
+            beginAtZero: true,
             //padding: 20
           },
           gridLines: {

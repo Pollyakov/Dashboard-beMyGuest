@@ -20,7 +20,6 @@ import {
 
 import ToggleSwitch from "components/ToggleSwitch/ToggleSwitch";
   import './dashboard.css';
-  import logomeal from "logomeal.svg";
 
 class Dashboard extends React.Component {
   render() {

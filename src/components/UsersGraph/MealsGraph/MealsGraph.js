@@ -21,13 +21,13 @@ class MealsGraph extends Component {
 
   componentDidMount() {
     axios
-      .get("http://tabsur.herokuapp.com/api/system/statsMeals")
+      .get("http://tabsur.herokuapp.com/api/system/statsMeals/7")
       .then((response) => {
         this.setState({
           data: response.data,
         });
       });
-  }
+  } 
 
   render() {
     const options = {
@@ -128,9 +128,9 @@ class MealsGraph extends Component {
       datasets: [
         {
           data: newMeals,
-          fill: false,
-          borderColor: "#fbc658",
-          backgroundColor: "transparent",
+          fill: true,
+          borderColor: "#6bd098",
+          backgroundColor: "#6bd098",
         //   pointBorderColor: "#fbc658",
         //   pointRadius: 4,
         //   pointHoverRadius: 4,
@@ -139,7 +139,7 @@ class MealsGraph extends Component {
         {
           data: activeMeals,
           fill: false,
-          borderColor: "#51CACF",
+          borderColor: "#f17e5d",
           backgroundColor: "transparent",
         //   pointBorderColor: "#51CACF",
         //   pointRadius: 4,
@@ -168,8 +168,8 @@ class MealsGraph extends Component {
             </CardBody>
             <CardFooter>
               <div className="chart-legend">
-                <i className="fa fa-circle text-warning" /> New Meals {" "}
-                <i className="fa fa-circle text-info" /> Active Meals  {" "}
+                <i className="fa fa-circle text-success" /> New Meals {" "}
+                <i className="fa fa-circle text-danger" /> Active Meals  {" "}
               </div>
               <hr />
               <div className="card-stats">

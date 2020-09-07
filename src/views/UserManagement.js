@@ -65,17 +65,13 @@ class UserManagement extends React.Component {
           <Row>
             <Col md="12">
               <Card>
-                {/* <CardHeader>
-                  <CardTitle tag="h4">User Management</CardTitle>
-                </CardHeader> */}
                 <CardBody>
-
                 <div className="button-container">
               <Button
                 href="#"
                 color="primary"
                
-                className="btn btn-outline-default btn-block"
+                className="btn btn-outline-default btn-block delete"
               >
                 Delete
               </Button>
@@ -103,7 +99,7 @@ class UserManagement extends React.Component {
                 className="btn btn-outline-default btn-block"
               >
                 Send Mail
-                <i className="nc-email-85" />
+                {/* <i className="nc-email-85" /> */}
               </Button>
               </div>
               

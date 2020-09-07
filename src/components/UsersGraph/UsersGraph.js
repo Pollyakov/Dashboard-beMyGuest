@@ -22,7 +22,7 @@ class UsersGraph extends Component {
 
   componentDidMount() {
     axios
-      .get("http://tabsur.herokuapp.com/api/system/statsUsers")
+      .get("http://tabsur.herokuapp.com/api/system/statsUsers/7")
       .then((response) => {
         this.setState({
           data: response.data,
