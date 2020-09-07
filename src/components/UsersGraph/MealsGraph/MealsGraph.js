@@ -153,8 +153,8 @@ class MealsGraph extends Component {
         <Col md="12">
           <Card className="card-chart">
             <CardHeader>
-              <CardTitle tag="h5">Meals Per Day</CardTitle>
-              <p className="card-category">New Meals and Active Meals per day</p>
+              <CardTitle tag="h5">Meals Per Week</CardTitle>
+              <p className="card-category">New Meals and Active Meals Per Week</p>
             </CardHeader>
             <CardBody>
               {this.state.data ? 

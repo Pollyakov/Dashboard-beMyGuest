@@ -192,8 +192,8 @@ class UsersGraph extends Component {
         <Col md="12">
           <Card className="card-chart">
             <CardHeader>
-              <CardTitle tag="h5">Users Per Day</CardTitle>
-              <p className="card-category">New Users and Active Users per day</p>
+              <CardTitle tag="h5">Users Per Week</CardTitle>
+              <p className="card-category">New Users and Active Users Per Week</p>
             </CardHeader>
             <CardBody>
               {this.state.data ? 
