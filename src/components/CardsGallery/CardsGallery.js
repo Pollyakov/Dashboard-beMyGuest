@@ -54,7 +54,7 @@ class CardsGallery extends Component {
           <ToggleCard name={"DB"} status={this.state.info? "On":"Off"} />
           <ToggleCard name={"Server"} status={this.state.server? "On":"Off"} />
           <InfoCard
-            icon={"nc-icon nc-badge text-success"}
+            icon={"nc-icon nc-badge text-info"}
             info={this.state.users}
             timewindow={"three month"}
             categInfo={"Users"}
