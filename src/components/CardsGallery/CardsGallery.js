@@ -57,7 +57,7 @@ class CardsGallery extends Component {
             icon={"nc-icon nc-badge text-success"}
             info={this.state.users}
             timewindow={"three month"}
-            categInfo={"Registered Users"}
+            categInfo={"Users"}
           />
           <InfoCard
             icon={"nc-icon nc-circle-10 text-danger"}
@@ -86,7 +86,7 @@ class CardsGallery extends Component {
                 onClick={this.handleResetClick}
                 color="danger"
                 block
-                className="btn-round reset-server btn btn-primary btn-lg btn-fill"
+                className="btn-round reset-server btn btn-primary btn-lg btn-fill reset"
                 target="_blank"
               >
                Reset Server
