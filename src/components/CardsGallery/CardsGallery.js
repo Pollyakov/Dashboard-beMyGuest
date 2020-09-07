@@ -6,7 +6,7 @@ import "./CardsGallery.css";
 import "react-bootstrap-table-next/dist/react-bootstrap-table2.min.css";
 import { Button, Card, CardHeader, CardFooter, CardColumnsPropsBody, CardTitle, Row, Col, Alert} from "reactstrap";
 
-class InformCards extends Component {
+class CardsGallery extends Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -98,4 +98,4 @@ class InformCards extends Component {
   }
 }
 
-export default InformCards;
+export default CardsGallery ;

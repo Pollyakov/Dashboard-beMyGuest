@@ -17,8 +17,7 @@ import {
   dashboardEmailStatisticsChart,
   dashboardNASDAQChart,
 } from "variables/charts.js";
-
-import ToggleSwitch from "components/ToggleSwitch/ToggleSwitch";
+import CardsGallery from "../components/CardsGallery/CardsGallery";
   import './dashboard.css';
 
 class Dashboard extends React.Component {
@@ -27,143 +26,10 @@ class Dashboard extends React.Component {
       <>
         <div className="content">
           <Row className="firstrow">
-
-          <Col lg="2" md="6" sm="6">
-              <Card className="card-stats">
-                <CardBody>
-                  <Row>
-                    <Col md="4" xs="5">
-                      <div className="icon-big text-center icon-warning">
-                        <i className="nc-icon nc-badge text-success" />
-                      </div>
-                    </Col>
-                    <Col md="8" xs="7">
-                      <div className="numbers">
-                        <p className="card-category">Users Registered</p>
-                        <CardTitle tag="p">1,345</CardTitle>
-                        <p />
-                      </div>
-                    </Col>
-                  </Row>
-                </CardBody>
-                <CardFooter>
-                  <hr />
-                  <div className="stats">
-                    <i className="far fa-calendar" /> Last 3 month
-                  </div>
-                </CardFooter>
-              </Card>
-            </Col>
-
-
-
-
-            <Col  lg="2" md="6" sm="6">
-              <Card  className="card-stats">
-                <CardBody> 
-                  <Row>
-                      <Col md="4" xs="5">
-                      {/* <div className="icon-big text-center icon-warning"> */}
-                      <ToggleSwitch/>
-                    </Col>
-                    <Col md="8" xs="7">
-                      <div className="numbers">
-                        <p className="card-category">Data Base</p>
-                        <CardTitle tag="p">OFF</CardTitle>
-                        <p />
-                      </div>
-                    </Col>
-                  </Row>
-                </CardBody>
-                <CardFooter>
-                  <hr />
-                  <div className="stats">
-                    <i className="fas fa-sync-alt" /> Update Now
-                  </div>
-                </CardFooter>
-              </Card>
-            </Col>
-<Col lg="2" md="6" sm="6">
-              <Card className="card-stats">
-                <CardBody>
-                  <Row>
-                    <Col md="4" xs="5">
-                      <div className="icon-big text-center icon-warning">
-                        <i className="nc-icon nc-circle-10 text-danger" />
-                      </div>
-                    </Col>
-                    <Col md="8" xs="7">
-                      <div className="numbers">
-                        <p className="card-category">Users Online</p>
-                        <CardTitle tag="p">23</CardTitle>
-                        <p />
-                      </div>
-                    </Col>
-                  </Row>
-                </CardBody>
-                <CardFooter>
-                  <hr />
-                  <div className="stats">
-                    <i className="far fa-clock" /> In the last hour
-                  </div>
-                </CardFooter>
-              </Card>
-            </Col>
-            <Col lg="2" md="6" sm="6">
-              <Card className="card-stats">
-                <CardBody>
-                  <Row>
-                      <Col md="4" xs="5">
-                      <div className="icon text-center icon-warning">
-                      <ToggleSwitch/>
-                      </div>
-                    </Col>
-                    <Col md="8" xs="7">
-                      <div className="numbers">
-                        <p className="card-category">Server</p>
-                        <CardTitle tag="p">ON</CardTitle>
-                        <p />
-                      </div>
-                    </Col>
-                  </Row>
-                </CardBody>
-                <CardFooter>
-                  <hr />
-                  <div className="stats">
-                    <i className="fas fa-sync-alt" /> Update Now
-                  </div>
-                </CardFooter>
-              </Card>
-            </Col>
-
-
-            <Col lg="2" md="6" sm="6">
-              <Card className="card-stats">
-                <CardBody>
-                  <Row>
-                    <Col md="4" xs="5">
-
-                      <div className="icon-big text-center icon-warning">
-                        <i className="nc-icon nc-basket text-info"/>
-                      </div>
-
-                    </Col>
-                    <Col md="8" xs="7">
-                      <div className="numbers">
-                        <p className="card-category">Active Meals</p>
-                        <CardTitle tag="p">+45K</CardTitle>
-                        <p />
-                      </div>
-                    </Col>
-                  </Row>
-                </CardBody>
-                <CardFooter>
-                  <hr />
-                  <div className="stats">
-                    <i className="fas fa-sync-alt" /> Update now
-                  </div>
-                </CardFooter>
-              </Card>
+              <CardsGallery/>
+              
+          <Col lg="12" md="12" sm="12">
+            
             </Col>
           </Row>
 

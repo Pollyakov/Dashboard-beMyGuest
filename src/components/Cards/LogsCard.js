@@ -55,8 +55,8 @@ class LogsCard extends Component {
   render()  {
   const toJson=()=> {
     return this.state.logs && this.state.logs.map((element)=>{
-      return <div>{element}</div>
-      {/* <hr /> */}
+      return <p>{element}</p>
+      
     })
   }
           

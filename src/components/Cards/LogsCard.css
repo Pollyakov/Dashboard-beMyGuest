@@ -1,7 +1,7 @@
 h4{
     margin-bottom: 0ch;
     margin-top: 0ch;
-        font-weight: 350;
+        font-weight: 400;
 }
 
 .no-border{
@@ -17,4 +17,8 @@ h4{
 
 .form{
     width: 300px;
+}
+
+p{
+    color: "#6bd098";
 }
