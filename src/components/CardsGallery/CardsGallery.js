@@ -11,19 +11,17 @@ class CardsGallery extends Component {
     super(props);
     this.state = {
       info: [],
-
-      // reset: "reset wasn't produced",
     };
+
     this.handleResetClick = this.handleResetClick.bind(this);
   }
 
   handleResetClick() {
-    return (
-    <Alert color="primary">
-     The server will be reseting.
-    </Alert>)
-
-
+    // return (
+    // <Alert color="primary">
+    //  The server will be reseting.
+    // </Alert>)
+     alert("The server will be reseted");
      axios
     .get("https://tabsur.herokuapp.com/api/system/reset")
         .then((response) => {
@@ -78,20 +76,17 @@ class CardsGallery extends Component {
             timewindow={"three month"}
             categInfo={"Meals Today"}
           />
-          {/* </Row>
-          <Row>
-          <Col md="4"> */}
-          {/* <button class="btn btn-dangery btn-lg btn-fill">Reset Server</button> */}
+    
           <Button 
                 onClick={this.handleResetClick}
                 color="danger"
-                block
+                // block
                 className="btn-round reset-server btn btn-primary btn-lg btn-fill reset"
                 target="_blank"
               >
                Reset Server
               </Button>
-              {this.state.open && this.handleResetClick()}
+              {/* {this.state.open && this.handleResetClick()} */}
           </Row>
      
     );
