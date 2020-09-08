@@ -49,20 +49,22 @@ class CardsGallery extends Component {
     return (
      
         <Row>
-          <ToggleCard name={"DB"} status={this.state.info? "On":"Off"} />
-          <ToggleCard name={"Server"} status={this.state.server? "On":"Off"} />
-          <InfoCard
-            icon={"nc-icon nc-badge text-info"}
-            info={this.state.users}
-            timewindow={"three month"}
-            categInfo={"Users"}
-          />
-          <InfoCard
+         <InfoCard
             icon={"nc-icon nc-circle-10 text-danger"}
             info={String(this.state.onlineUsers)}
             timewindow={"last hour"}
             categInfo={"Users Online"}
           />
+           <InfoCard
+            icon={"nc-icon nc-badge text-info"}
+            info={this.state.users}
+            timewindow={"three month"}
+            categInfo={"Users"}
+          />
+          <ToggleCard name={"DB"} status={this.state.info? "On":"Off"} />
+          
+         
+         
           
           <InfoCard
             icon={"nc-icon nc-basket text-info"}
@@ -70,6 +72,7 @@ class CardsGallery extends Component {
             timewindow={"three month"}
             categInfo={"Active Meals"}
           />
+          <ToggleCard name={"Server"} status={this.state.server? "On":"Off"} />
           <InfoCard
             icon={"nc-icon nc-basket text-danger"}
             info={this.state.mealsToday}
@@ -77,7 +80,7 @@ class CardsGallery extends Component {
             categInfo={"Meals Today"}
           />
     
-          <Button 
+          {/* <Button 
                 onClick={this.handleResetClick}
                 color="danger"
                 // block
@@ -85,7 +88,7 @@ class CardsGallery extends Component {
                 target="_blank"
               >
                Reset Server
-              </Button>
+              </Button> */}
               {/* {this.state.open && this.handleResetClick()} */}
           </Row>
      

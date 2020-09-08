@@ -1,10 +1,11 @@
 import React, { Component } from "react";
 import { Container, Table, Col, Button } from "react-bootstrap";
-import BootstrapTable from "react-bootstrap-table-next";
+import BootstrapTable from 'react-bootstrap-table-next';
 // import paginationFactory from 'react-bootstrap-table2-paginator';
 import axios from "axios";
 import "./UserManagement.css";
 import "react-bootstrap-table-next/dist/react-bootstrap-table2.min.css";
+import 'react-bootstrap-table2-paginator/dist/react-bootstrap-table2-paginator.min.css';
 // reactstrap components
 import {
   Card,
@@ -46,21 +47,29 @@ class UserManagement extends React.Component {
         dataField: "id",
         text: "user ID",
         sort: true,
+        align: 'center',
+        headerAlign: 'center',
       },
       {
         dataField: "name",
         text: "User Name",
         sort: true,
+        headerAlign: 'center',
+        align: 'center',
       },
       {
         dataField: "created_at",
         text: "Creation Date",
         sort: true,
+        headerAlign: 'center',
+        align: 'center',
       },
       {
         dataField: "email",
         text: "User email",
         sort: true,
+        headerAlign: 'center',
+        align: 'center',
       },
     ];
     const selectRow = {
@@ -74,13 +83,6 @@ class UserManagement extends React.Component {
             <Col md="12">
               <Card>
                 <CardBody>
-                  <BootstrapTable
-                    keyField="id"
-                    data={this.state.users}
-                    columns={columns}
-                    selectRow={selectRow}
-                    // pagination={paginationFactory()}
-                  />
 
                   <div className="button-container">
                     <Button
@@ -116,6 +118,13 @@ class UserManagement extends React.Component {
                       {/* <i className="nc-email-85" /> */}
                     </Button>
                   </div>
+                   <BootstrapTable
+                    keyField="id"
+                    data={this.state.users}
+                    columns={columns}
+                    selectRow={selectRow}
+                    // pagination={paginationFactory()}
+                  />
                 </CardBody>
               </Card>
             </Col>
