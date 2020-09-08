@@ -21,7 +21,7 @@ class MealsGraph extends Component {
 
   componentDidMount() {
     axios
-      .get("http://tabsur.herokuapp.com/api/system/statsMeals/7")
+      .get("https://tabsur.herokuapp.com/api/system/statsMeals/7")
       .then((response) => {
         this.setState({
           data: response.data,
