@@ -48,8 +48,8 @@ class Dashboard extends React.Component {
         <Sidebar
           {...this.props}
           routes={routes}
-          bgColor={this.state.backgroundColor}
-          activeColor={this.state.activeColor}
+          // bgColor={this.state.backgroundColor}
+          // activeColor={this.state.activeColor}
         />
         <div className="main-panel" ref={this.mainPanel}>
           <DemoNavbar {...this.props} />
