@@ -38,7 +38,7 @@ class Dashboard extends React.Component {
                 <UserManagement/>
             </Col>
             <Col md="6">
-               <MealsGraph/>
+               <MealsGraph />
                <UsersGraph/>
             </Col>
           </Row>

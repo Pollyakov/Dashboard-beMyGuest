@@ -34,6 +34,13 @@ class UserManagement extends React.Component {
   }
 
   render() {
+    // handleResetPasswordClick() {
+    //    axios
+    //   .put("https://tabsur.herokuapp.com/api/system/resetPassword")
+    //       .then((response) => {
+    //         alert(String(response.statusText)==="OK"?"The server was reseted": "Error hac occured");
+    //         }) 
+    // }
     const columns = [
       {
         dataField: "id",

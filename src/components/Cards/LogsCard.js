@@ -30,7 +30,8 @@ class LogsCard extends Component {
       .delete("https://tabsur.herokuapp.com/api/system/log")
           .then((response) => {
             if (response && response.data) {
-              this.setState({ logs: response.data });
+              this.setState({ logs: [] });
+              // this.setState({ logs: response.data });
           }
             })
     }
