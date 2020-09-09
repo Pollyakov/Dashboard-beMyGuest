@@ -2,11 +2,11 @@ import React, { Component } from "react";
 import { Container, Table, Col, Button } from "react-bootstrap";
 import BootstrapTable from "react-bootstrap-table-next";
 import paginationFactory from "react-bootstrap-table2-paginator";
-// import cellEditFactory from "react-bootstrap-table2-editor";
 import axios from "axios";
 import "./UserManagement.css";
 import "react-bootstrap-table-next/dist/react-bootstrap-table2.min.css";
 import "react-bootstrap-table2-paginator/dist/react-bootstrap-table2-paginator.min.css";
+import cellEditFactory from "react-bootstrap-table2-editor";
 // reactstrap components
 import {
   Card,
@@ -23,6 +23,7 @@ class UserManagement extends React.Component {
     super(props);
     this.state = {
       users: [],
+      selected: []
     };
   }
   componentDidMount() {
@@ -34,18 +35,43 @@ class UserManagement extends React.Component {
         });
       });
   }
-
-  render() {
-    function beforeSaveCell(oldValue, newValue, row, column, done) {
-      setTimeout(() => {
-        if (window.confirm('Do you want to accep this change?')) {
-          done(true);
-        } else {
-          done(false);
-        }
-      }, 0);
-      return { async: true };
+  handleOnSelect = (row, isSelect) => {
+    if (isSelect) {
+      this.setState(() => ({
+        selected: [...this.state.selected, row.id]
+      }));
+    } else {
+      this.setState(() => ({
+        selected: this.state.selected.filter(x => x !== row.id)
+      }));
     }
+    console.log(JSON.stringify(this.state.selected));
+  }
+
+   handleResetPasswordClick() {
+    console.log ("handleResetPasswordClick");
+  //   axios
+  //  .put("https://tabsur.herokuapp.com/api/system/resetPassword")
+  //      .then((response) => {
+  //        alert(String(response.statusText)==="OK"?"The server was reseted": "Error hac occured");
+  //        }) 
+  }
+
+  handleOnDelete (){
+    console.log (`Deleting.`);
+    if (this.state.selected === [])
+      return;
+    const index = this.state.selected[0];
+    this.setState(
+      {
+        users: 
+        this.state.users.filter(function(user) { 
+          return user.id !== index;}),
+        selected: []
+      });
+  }
+  render() {
+    
     const columns = [
       {
         dataField: "id",
@@ -79,7 +105,10 @@ class UserManagement extends React.Component {
     const selectRow = {
       mode: "checkbox",
       clickToSelect: true,
+      onSelect: this.handleOnSelect,
     };
+
+    
     return (
       <>
         <div className="content">
@@ -104,13 +133,14 @@ class UserManagement extends React.Component {
                       href="#"
                       color="primary"
                       className="btn btn-outline-default btn-block delete"
+                      onClick={()=>this.handleOnDelete()}
                     >
                       Delete
                     </Button>
                     <Button
-                      href="#"
                       color="primary"
                       block
+                      onClick={this.handleResetPasswordClick}
                       className="btn btn-outline-default btn-block"
                     >
                       Reset Password
@@ -119,6 +149,7 @@ class UserManagement extends React.Component {
                       href="#"
                       color="primary"
                       block
+                  
                       className="btn btn-outline-default btn-block"
                     >
                       Rename
