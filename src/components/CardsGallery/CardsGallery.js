@@ -80,7 +80,7 @@ class CardsGallery extends Component {
             categInfo={"Meals Today"}
           />
     
-          {/* <Button 
+          <Button 
                 onClick={this.handleResetClick}
                 color="danger"
                 // block
@@ -89,7 +89,7 @@ class CardsGallery extends Component {
               >
                Reset Server
               </Button> */}
-              {/* {this.state.open && this.handleResetClick()} */}
+              {/* {/* {this.state.open && this.handleResetClick()} */}
           </Row>
      
     );

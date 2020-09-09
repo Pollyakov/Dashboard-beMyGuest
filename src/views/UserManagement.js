@@ -84,40 +84,7 @@ class UserManagement extends React.Component {
               <Card>
                 <CardBody>
 
-                  <div className="button-container">
-                    <Button
-                      href="#"
-                      color="primary"
-                      className="btn btn-outline-default btn-block delete"
-                    >
-                      Delete
-                    </Button>
-                    <Button
-                      href="#"
-                      color="primary"
-                      block
-                      className="btn btn-outline-default btn-block"
-                    >
-                      Reset Password
-                    </Button>
-                    <Button
-                      href="#"
-                      color="primary"
-                      block
-                      className="btn btn-outline-default btn-block"
-                    >
-                      Rename
-                    </Button>
-                    <Button
-                      href="#"
-                      color="primary"
-                      block
-                      className="btn btn-outline-default btn-block"
-                    >
-                      Send Mail
-                      {/* <i className="nc-email-85" /> */}
-                    </Button>
-                  </div>
+                  
                    <BootstrapTable
                     keyField="id"
                     data={this.state.users}
@@ -125,6 +92,43 @@ class UserManagement extends React.Component {
                     selectRow={selectRow}
                     // pagination={paginationFactory()}
                   />
+
+
+<div className="button-container">
+                  
+                  <Button
+                    href="#"
+                    color="primary"
+                    className="btn btn-outline-default btn-block delete"
+                  >
+                    Delete
+                  </Button>
+                  <Button
+                    href="#"
+                    color="primary"
+                    block
+                    className="btn btn-outline-default btn-block"
+                  >
+                    Reset Password
+                  </Button>
+                  <Button
+                    href="#"
+                    color="primary"
+                    block
+                    className="btn btn-outline-default btn-block"
+                  >
+                    Rename
+                  </Button>
+                  <Button
+                    href="#"
+                    color="primary"
+                    block
+                    className="btn btn-outline-default btn-block"
+                  >
+                    Send Mail
+                    {/* <i className="nc-email-85" /> */}
+                  </Button>
+                </div>
                 </CardBody>
               </Card>
             </Col>
