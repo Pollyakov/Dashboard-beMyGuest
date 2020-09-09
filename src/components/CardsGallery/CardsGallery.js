@@ -88,7 +88,7 @@ class CardsGallery extends Component {
                 target="_blank"
               >
                Reset Server
-              </Button> */}
+              </Button> 
               {/* {/* {this.state.open && this.handleResetClick()} */}
           </Row>
      
